@@ -14,108 +14,73 @@
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
 </head>
     
-<body class="theme-light" data-highlight="highlight-red" data-gradient="body-default">
+<body id="customer_home_page" class="theme-light" data-highlight="highlight-red" data-gradient="body-default">
     
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
     
 <div id="page">
     
+    <div id="footer-bar" class="footer-bar-1">
+        <a href="index.html" class="active-nav"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="index-components.html"><i class="fa fa-star"></i><span>Features</span></a>
+        <a href="index-pages.html"><i class="fa fa-heart"></i><span>Pages</span></a>
+        <a href="index-search.html"><i class="fa fa-search"></i><span>Search</span></a>
+        <a href="#" data-menu="menu-settings"><i class="fa fa-cog"></i><span>Settings</span></a>
+    </div>
         
     <div class="page-content header-clear-small">
-                
-        <div class="card card-style">
-            <div class="content">
-                <h1>I would like to...</h1>
-            </div>
-        </div>
-
-        <style>
-            @keyframes modal-icon {
-                0% {transform:scale(1, 1); opacity:0.5;} 
-                50% {transform:scale(1.1, 1.1); opacity:1} 
-                100% {transform:scale(1, 1); opacity:0.5;}
-            }
-            .modal-icon{animation:modal-icon 1.6s; animation-iteration-count: infinite;}
-            
-            @keyframes action-icon {
-                0% {transform:translateY(0px); opacity:1;} 
-                50% {transform:translateY(5px); opacity:0.5} 
-                100% {transform:translateY(0px); opacity:1;} 
-            }
-            .action-icon{animation:action-icon 1.6s; animation-iteration-count: infinite;}
-        </style>
-        
-        <a href="customer_home.html">
-            <div class="card card-style bg-5 mb-3 py-4" data-card-height="120">
-                <div class="card-center px-4">
-                    <div class="d-flex">
-                        <div class="align-self-center">
-                            <i class="fa fa-chevron-up color-blue-dark fa-2x action-icon"></i>
-                        </div>
-                        <div class="align-self-center ps-4">
-                            <h1 class="font-23 mb-0 color-white">Order my groceries</h1>
-                            <p class="font-11 opacity-50 mt-n2 mb-0 color-white">Order your groceries and receive them the same day</p>
-                        </div>
-                        <div class="aling-self-center ms-auto">
-                            <i class="fa fa-arrow-right pt-3 color-white opacity-60"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-overlay bg-black opacity-80"></div>
-            </div>
-        </a>
-  
-        <a href="component-action-modals-new.html">
-            <div class="card card-style bg-5 mb-3 py-4" data-card-height="120">
-                <div class="card-center px-4">
-                    <div class="d-flex">
-                        <div class="align-self-center">
-                            <i class="far fa-minus-square color-green-dark fa-2x mt-1 modal-icon"></i>
-                        </div>
-                        <div class="align-self-center ps-4">
-                            <h1 class="font-23 mb-0 color-white">Deliver groceries</h1>
-                            <p class="font-11 opacity-50 mt-n2 mb-0 color-white">Deliver groceries by car, bike, foot, etc. and earn money</p>
-                        </div>
-                        <div class="aling-self-center ms-auto">
-                            <i class="fa fa-arrow-right pt-3 color-white opacity-60"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-overlay bg-black opacity-80"></div>
-            </div>
-        </a>
-
-
-        <a href="component-action-modals-new.html">
-            <div class="card card-style bg-5 mb-5 py-4" data-card-height="120">
-                <div class="card-center px-4">
-                    <div class="d-flex">
-                        <div class="align-self-center">
-                            <i class="far fa-minus-square color-green-dark fa-2x mt-1 modal-icon"></i>
-                        </div>
-                        <div class="align-self-center ps-4">
-                            <h1 class="font-23 mb-0 color-white">Introduce my supermarket </h1>
-                            <p class="font-11 opacity-50 mt-n2 mb-0 color-white">Insert your supermarket and increase your sales</p>
-                        </div>
-                        <div class="aling-self-center ms-auto">
-                            <i class="fa fa-arrow-right pt-3 color-white opacity-60"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-overlay bg-black opacity-80"></div>
-            </div>
-        </a>
     
+        <a href="#" class="card card-style">
+            <div class="card mb-0" data-card-height="255" style="background-image:url(images/food/full/1s.jpg)">
+                <div class="card-top m-2">
+                    <p class="px-3 py-1 color-black rounded-s text-uppercase font-700 bg-white float-end font-15">$24.45</p>
+                </div>
+                <div class="card-bottom px-3 py-2">
+                    <h1 class="color-white font-28 pb-1">Classic Burger</h1>
+                    <p class="color-white opacity-50 mb-2">
+                        Grilled beef, BBQ sauce, onion rings, bacon slices, cheese, lettuce, salad dressing.
+                    </p>
+                </div>
+                <div class="card-overlay bg-gradient"></div>
+            </div>
+        </a>    
+        <a href="#" class="card card-style">
+            <div class="card mb-0" data-card-height="255" style="background-image:url(images/food/full/2s.jpg)">
+                <div class="card-top m-2">
+                    <p class="px-3 py-1 color-black rounded-s text-uppercase font-700 bg-white float-end font-15">$18.15</p>
+                </div>
+                <div class="card-bottom px-3 py-2">
+                    <h1 class="color-white font-28 pb-1">Pizza Special</h1>
+                    <p class="color-white opacity-50 mb-2">
+                        Fresh tomato sauce, avocado, cheese, fresh bacon, sliced ham and seasoning. 
+                    </p>
+                </div>
+                <div class="card-overlay bg-gradient"></div>
+            </div>
+        </a>
+        <a href="#" class="card card-style">
+            <div class="card mb-0" data-card-height="255" style="background-image:url(images/food/full/8s.jpg)">
+                <div class="card-top m-2">
+                    <p class="px-3 py-1 color-black rounded-s text-uppercase font-700 bg-white float-end font-15">$9.99</p>
+                </div>
+                <div class="card-bottom px-3 py-2">
+                    <h1 class="color-white font-28 pb-1">Crispy Strips</h1>
+                    <p class="color-white opacity-50 mb-2">
+                        Dipped chicken breast with mayo or ketchup sauce with a large serving of french fries.
+                    </p>
+                </div>
+                <div class="card-overlay bg-gradient"></div>
+            </div>
+        </a>
+        
+       
+        
+
+  
     
     </div>
-
-    <a href="#" data-toggle-theme class="show-on-theme-light cover-button-bottom btn btn-xs rounded-xl shadow-huge btn-center-l font-900 bg-dark-dark "><i class="fa fa-moon me-3"></i>DARK MODE</a>
-    <a href="#" data-toggle-theme class="show-on-theme-dark cover-button-bottom btn btn-xs rounded-xl shadow-huge btn-center-l font-900 bg-dark-dark "><i class="fa fa-sun me-3"></i>LIGHT MODE</a>
-
-    
-    
     <!-- End of Page Content--> 
-    <!-- All Menus, Action Sheets, Modals, Notifications, Toasts get Placed outside the <div class="page-content"> -->
+    <!-- All Menus, Action Sheets, Modals, Notifications, Toasts, Snackbars get Placed outside the <div class="page-content"> -->
     <div id="menu-settings" class="menu menu-box-bottom menu-box-detached">
         <div class="menu-title mt-0 pt-0"><h1>Settings</h1><p class="color-highlight">Flexible and Easy to Use</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
         <div class="divider divider-margins mb-n2"></div>
@@ -230,9 +195,42 @@
             </div>
         </div>
     </div>
+
+    <!-- Be sure this is on your main visiting page, for example, the index.html page-->
+    <!-- Install Prompt for Android -->
+    <div id="menu-install-pwa-android" class="menu menu-box-bottom menu-box-detached rounded-l">
+        <div class="boxed-text-l mt-4 pb-3">
+            <img class="rounded-l mb-3" src="app/icons/icon-128x128.png" alt="img" width="90">
+            <h4 class="mt-3">Add Sticky on your Home Screen</h4>
+            <p>
+                Install Sticky on your home screen, and access it just like a regular app. It really is that simple!
+            </p>
+            <a href="#" class="pwa-install btn btn-s rounded-s shadow-l text-uppercase font-900 bg-highlight mb-2">Add to Home Screen</a><br>
+            <a href="#" class="pwa-dismiss close-menu color-gray-dark text-uppercase font-900 opacity-60 font-10 pt-2">Maybe later</a>
+            <div class="clear"></div>
+        </div>
+    </div>   
+
+    <!-- Install instructions for iOS -->
+    <div id="menu-install-pwa-ios" 
+        class="menu menu-box-bottom menu-box-detached rounded-l">
+        <div class="boxed-text-xl mt-4 pb-3">
+            <img class="rounded-l mb-3" src="app/icons/icon-128x128.png" alt="img" width="90">
+            <h4 class="mt-3">Add Sticky on your Home Screen</h4>
+            <p class="mb-0 pb-0">
+                Install Sticky, and access it like a regular app. Open your Safari menu and tap "Add to Home Screen".
+            </p>
+            <div class="clearfix pt-3"></div>
+            <a href="#" class="pwa-dismiss close-menu color-highlight text-uppercase font-700">Maybe later</a>
+        </div>
+    </div>
     
 </div>
-
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd1G5J5GBpDTq0yfp6OOtSJ4D5-roO-Sg&libraries=places">
+</script>
 <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="customer_home.js"></script>
+
 </body>

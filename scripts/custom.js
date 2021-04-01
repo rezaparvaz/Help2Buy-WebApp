@@ -1418,15 +1418,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const swup = new Swup(options);    
             document.addEventListener('swup:pageView',(e) => { init_template(); })
         }
+
     }
 
     init_template();
 
-    
-    // console.log("Hello world!");
-    // document.getElementById('get-started-button').addEventListener('click', () => {
-    //     console.log("Hello world!");
-    // });
 
 });
 
