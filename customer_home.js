@@ -7,56 +7,202 @@ if (navigator.geolocation) {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
-      var request = {
-        location: {lat: pos.lat, lng: pos.lng},
-        radius: '15000',
-        keyword: ['supermarket']
+      var request1 = {
+        location: { lat: pos.lat, lng: pos.lng },
+        radius: '10000',
+        keyword: ['supermarket'],
       };
       var service = new google.maps.places.PlacesService(document.createElement('div'));
-      service.nearbySearch(request, function(results, status) {
+      service.nearbySearch(request1, function (results, status, next_page_token) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-            // for (var i = 0; i < results.length; i++) {
-                  // console.log(results[i]);
 
-                  var a = document.createElement('a');
-                  a.setAttribute('href','#');
-                  a.setAttribute('class', 'card card-style');
+          for (var i = 0; i < results.length; i++) {
 
 
-                  var div2 = document.createElement('div');
-                  // div2.setAttribute('class', 'card-bottom px-3 py-2');
-                  div2.setAttribute('class', 'card');
-                  div2.setAttribute('data-card-height', '255');
-                  div2.setAttribute('style', 'background-image:url(images/food/full/1s.jpg)');
+            var a = document.createElement('a');
+            a.setAttribute('href', '#');
+            a.classList.add('card', 'card-style');
 
-                  var div1 = document.createElement('div');
-                  div1.setAttribute('class', 'card-bottom px-3 py-2');
-                  
-                  var h1 = document.createElement('h1');
-                  h1.setAttribute('class', 'color-white font-28 pb-1');
-                  h1.appendChild(document.createTextNode("sa"));
-                  // h1.appendChild(document.createTextNode(results[i].name));
+            var div3 = document.createElement('div');
+            div3.classList.add('card', 'mb-0');
+            div3.setAttribute("data-card-height", "255");
+            if (results[i] && results[i].photos) {
+              div3.setAttribute('style', 'background-image: url(\"' + results[i].photos[0].getUrl({}) + '\"); height: 255px;');
+            } else {
+              div3.setAttribute('style', 'background-image: url(\"images/food/full/8s.jpg\"); height: 255px;');
 
-                  var p = document.createElement('p');
-                  p.setAttribute('class', 'color-white opacity-50 mb-2');
-                  p.appendChild(document.createTextNode("results[i].vicinity"));
-                  // p.appendChild(document.createTextNode(results[i].vicinity));
+            }
+            // var att = document.createAttribute("data-card-height");       // Create a "class" attribute
+            // att.value = "255";    
+            // div3.setAttributeNode(att)
 
-                  div1.appendChild(h1);
-                  div1.appendChild(p);
+            var div2 = document.createElement('div');
+            div2.classList.add('card-overlay', 'bg-gradient');
 
-                  div2.appendChild(div1);
+            var div1 = document.createElement('div');
+            div1.classList.add('card-bottom', 'px-3', 'py-2');
 
-                  a.appendChild(div2);
-                  document.getElementById('supermakets_container').appendChild(div2);
+            var h1 = document.createElement('h1');
+            h1.appendChild(document.createTextNode(results[i].name));
+            h1.classList.add('color-white', 'font-28', 'pb-1')
 
+            var p = document.createElement('p');
 
-            // }
-          }else {
-            console.log(pos);
+            p.appendChild(document.createTextNode(results[i].vicinity));
+            p.classList.add('color-white', 'opacity-50', 'mb-2');
+
+            div1.appendChild(h1);
+            div1.appendChild(p);
+
+            div3.appendChild(div1);
+            div3.appendChild(div2);
+
+            a.appendChild(div3);
+            document.getElementById('supermakets_container').appendChild(a);
+
 
           }
-    });
+
+// console.log(results);
+// var request2 = {
+            // location: { lat: pos.lat, lng: pos.lng },
+            // radius: '10000',
+            // keyword: ['supermarket'],
+          //   pagetoken: next_page_token.o
+          // };
+          // results = [];
+          // status = "";
+          // next_page_token = "";
+          // service.nearbySearch(request2, function (results, status, next_page_token) {
+          //   if (status == google.maps.places.PlacesServiceStatus.OK) {
+              // for (var i = 0; i < results.length; i++) {
+
+
+              //   var a = document.createElement('a');
+              //   a.setAttribute('href', '#');
+              //   a.classList.add('card', 'card-style');
+
+              //   var div3 = document.createElement('div');
+              //   div3.classList.add('card', 'mb-0');
+              //   div3.setAttribute("data-card-height", "255");
+              //   if (results[i] && results[i].photos) {
+              //     div3.setAttribute('style', 'background-image: url(\"' + results[i].photos[0].getUrl({}) + '\"); height: 255px;');
+              //   } else {
+              //     div3.setAttribute('style', 'background-image: url(\"images/food/full/8s.jpg\"); height: 255px;');
+
+              //   }
+              //   // var att = document.createAttribute("data-card-height");       // Create a "class" attribute
+              //   // att.value = "255";    
+              //   // div3.setAttributeNode(att)
+
+              //   var div2 = document.createElement('div');
+              //   div2.classList.add('card-overlay', 'bg-gradient');
+
+              //   var div1 = document.createElement('div');
+              //   div1.classList.add('card-bottom', 'px-3', 'py-2');
+
+              //   var h1 = document.createElement('h1');
+              //   h1.appendChild(document.createTextNode(results[i].name));
+              //   h1.classList.add('color-white', 'font-28', 'pb-1')
+
+              //   var p = document.createElement('p');
+
+              //   p.appendChild(document.createTextNode(results[i].vicinity));
+              //   p.classList.add('color-white', 'opacity-50', 'mb-2');
+
+              //   div1.appendChild(h1);
+              //   div1.appendChild(p);
+
+              //   div3.appendChild(div1);
+              //   div3.appendChild(div2);
+
+              //   a.appendChild(div3);
+              //   document.getElementById('supermakets_container').appendChild(a);
+
+
+              // }
+              // console.log(results);
+
+
+              // var request3 = {
+                // location: { lat: pos.lat, lng: pos.lng },
+                // radius: '10000',
+                // keyword: ['supermarket'],
+              //   pagetoken: next_page_token
+              // };
+
+              // results = [];
+              // status = "";
+              // next_page_token = "";
+              // service.nearbySearch(request3, function (results, status, next_page_token) {
+              //   if (status == google.maps.places.PlacesServiceStatus.OK) {
+                  // for (var i = 0; i < results.length; i++) {
+                    // console.log(results);
+
+
+                  //   var a = document.createElement('a');
+                  //   a.setAttribute('href', '#');
+                  //   a.classList.add('card', 'card-style');
+
+                  //   var div3 = document.createElement('div');
+                  //   div3.classList.add('card', 'mb-0');
+                  //   div3.setAttribute("data-card-height", "255");
+                  //   if (results[i] && results[i].photos) {
+                  //     div3.setAttribute('style', 'background-image: url(\"' + results[i].photos[0].getUrl({}) + '\"); height: 255px;');
+                  //   } else {
+                  //     div3.setAttribute('style', 'background-image: url(\"images/food/full/8s.jpg\"); height: 255px;');
+
+                  //   }
+                  //   // var att = document.createAttribute("data-card-height");       // Create a "class" attribute
+                  //   // att.value = "255";    
+                  //   // div3.setAttributeNode(att)
+
+                  //   var div2 = document.createElement('div');
+                  //   div2.classList.add('card-overlay', 'bg-gradient');
+
+                  //   var div1 = document.createElement('div');
+                  //   div1.classList.add('card-bottom', 'px-3', 'py-2');
+
+                  //   var h1 = document.createElement('h1');
+                  //   h1.appendChild(document.createTextNode(results[i].name));
+                  //   h1.classList.add('color-white', 'font-28', 'pb-1')
+
+                  //   var p = document.createElement('p');
+
+                  //   p.appendChild(document.createTextNode(results[i].vicinity));
+                  //   p.classList.add('color-white', 'opacity-50', 'mb-2');
+
+                  //   div1.appendChild(h1);
+                  //   div1.appendChild(p);
+
+                  //   div3.appendChild(div1);
+                  //   div3.appendChild(div2);
+
+                  //   a.appendChild(div3);
+                  //   document.getElementById('supermakets_container').appendChild(a);
+
+
+                  // }
+
+
+              //   } else {
+              //     console.log(pos);
+
+              //   }
+              // });
+
+          //   } else {
+          //     console.log(pos);
+
+          //   }
+          // });
+
+
+        } else {
+          console.log(pos);
+
+        }
+      });
 
     },
     () => {
